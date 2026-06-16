@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Figtree-Italic-VariableFont_wght";
+    src: url("../../assets/fonts/figtree/Figtree-Italic-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Figtree-VariableFont_wght";
+    src: url("../../assets/fonts/figtree/Figtree-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+}

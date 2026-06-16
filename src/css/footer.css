@@ -1,0 +1,35 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #09212A;
+    height: 128px;
+
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+}
+
+footer>img {
+    width: 136px;
+}
+
+.footer_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+}
+
+.footer_inner>p {
+    font-family: Figtree-VariableFont_wght, sans-serif;
+    font-size: 16px;
+    font-weight: 400px;
+
+    color: #99ACB3;
+
+    text-align: center;
+}

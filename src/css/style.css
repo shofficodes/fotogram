@@ -1,0 +1,21 @@
+h1 {
+    font-family: "Figtree-VariableFont_wght", sans-serif;
+    font-size: 56px;
+    font-weight: 800;
+}
+
+article {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    min-height: 575px; /* später wieder löschen */
+
+    margin: 160px 0px;
+}
+
+article > section > img {
+    width: 150px; 
+    height: 150px; 
+}
