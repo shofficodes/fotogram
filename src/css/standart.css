@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 1440) {
+    * {
+        margin: 0px;
+        border: 0px;
+    }
+
+    html {
+        padding-left: max(calc(50% - 720px), 0px);
+        padding-right: max(calc(50% - 720px), 0px);
+    }
+}
