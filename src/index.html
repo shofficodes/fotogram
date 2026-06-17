@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
+<body onload="init()">
     <main>
         <header>
             <nav aria-label="Hauptnavigation">
@@ -31,9 +31,7 @@
 
             <section class="content_area" id="content_area" aria-labelledby="gallery-heading">
                 <!-- Diesen <img> Tag mit JS Schleife erzeugen! -->
-                <img src="../assets/img/content/default/Property 1=alaska-810433_1280.jpg-2.png" alt="img_of_alaska">
 
-                <dialog id="dialog"></dialog>
             </section>
         </article>
 
@@ -47,7 +45,13 @@
         </footer>
     </main>
 
-    <script src="./script.js"></script>
+    <script src="./js/renderContent.js"></script>
+
+    <script>
+        function init() {
+            renderContent();
+        }
+    </script>
 </body>
 
 </html>

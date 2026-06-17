@@ -24,7 +24,7 @@ main {
         border: 0px;
     }
 
-    article, nav, .footer_inner {
+    article, nav, section, .footer_inner {
         padding-left: max(calc(50% - 720px), 0px);
         padding-right: max(calc(50% - 720px), 0px);
     }
