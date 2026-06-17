@@ -1,36 +1,37 @@
 
 // Array mit Dateinamen der img´s
 let content = [
-    "Property 1=alaska-810433_1280.jpg-2.png",
-    "Property 1=anime-8788959_1280.jpg-2.png",
-    "Property 1=atmosphere-8752835_1280.png-2.png",
-    "Property 1=blue-tit-8521052_1280.jpg-2.png",
-    "Property 1=hurricane-92968_1280.jpg-2.png",
-    "Property 1=lake-2896379_1280.jpg-2.png",
-    "Property 1=moorente-8783210_1280.jpg-2.png",
-    "Property 1=sea-2563389_1280.jpg-2.png",
-    "Property 1=snow-bunting-6781122_1280.jpg-2.png",
-    "Property 1=snow-leopard-cubs-8039138_1280.jpg-2.png",
-    "Property 1=travel-8785493_1280.jpg-2.png",
-    "Property 1=winter-1675197_1280.jpg-2.png"
+    "alaska-810433_1280.jpg",
+    "hurricane-92968_1280.jpg",
+    "snow-bunting-6781122_1280.jpg",
+    "anime-8788959_1280.jpg",
+    "lake-2896379_1280.jpg",
+    "snow-leopard-cubs-8039138_1280.jpg",
+    "atmosphere-8752835_1280.png",
+    "moorente-8783210_1280.jpg",
+    "travel-8785493_1280.jpg",
+    "blue-tit-8521052_1280.jpg",
+    "sea-2563389_1280.jpg",
+    "winter-1675197_1280.jpg"
 ]
 
 // Array mit alternativ Texten
 let content_alt = [
     "img_of_alaska",
-    "img_anime_city",
-    "img_atmosphere",
-    "img_blue_bird",
     "img_hurricane",
-    "img_lake",
-    "img_moorente",
-    "img_sea",
     "img_snow_bunting",
+    "img_anime_city",
+    "img_lake",
     "img_snow_leopard",
+    "img_atmosphere",
+    "img_moorente",
     "img_mountain",
+    "img_blue_bird",
+    "img_sea",
     "img_winter_tree"
 ]
 
+// rendert den content in den dafür vorgesehenen Bereich
 function renderContent() {
     let maxRowItems = 7;
     let rowsDone = 0;
@@ -88,7 +89,7 @@ function renderContent() {
 // returned den contentHTML-Code
 function contentHtml(img, alt) {
     return ` 
-    <img src="../assets/img/content/${img}" alt="${alt}">
+    <img src="../assets/img/content/${img}" alt="${alt}" id="${alt}" onclick="openDialog('${alt}_dialog')">
     `
 }
 // returned einen <div> Container, in den der Content geladen wird
@@ -107,8 +108,3 @@ function lastContainerHtml(className, num, restNum) {
     </div>
     `
 }
-
-
-// Anschließend Displays erzeugen 
-
-// Anschließend die button logiken implementieren

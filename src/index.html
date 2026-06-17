@@ -30,8 +30,11 @@
             </header>
 
             <section class="content_area" id="content_area" aria-labelledby="gallery-heading">
-                <!-- Diesen <img> Tag mit JS Schleife erzeugen! -->
+                <!-- Diese Sekiton wird in ./js/renderContent.js erstellt! -->
+            </section>
 
+            <section class="dialog_area" id="dialog_area">
+                <!-- Diese Sektion wird in ./js/renderDialog.js erstellt! -->
             </section>
         </article>
 
@@ -46,10 +49,13 @@
     </main>
 
     <script src="./js/renderContent.js"></script>
+    <script src="./js/renderDialog.js"></script>
 
     <script>
         function init() {
             renderContent();
+            renderDialog();
+            enableDialogOutsideClickClose();
         }
     </script>
 </body>
