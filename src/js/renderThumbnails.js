@@ -91,7 +91,7 @@ function renderThumbnails() {
 // returned den contentHTML-Code
 function contentHtml(img, alt) {
     return ` 
-    <img src="../assets/img/content/${img}" alt="${alt}" id="${alt}" onclick="openDialog('${alt}_dialog')" tabindex="0" onkeyup="if(event.key === 'Enter') {openDialog('${alt}_dialog')}">
+    <img src="../assets/img/content/${img}" alt="${alt}" id="${alt}" onclick="openDialog('${alt}_dialog')" tabindex="0" onkeyup="if(event.key === 'Enter') {openDialog('${alt}_dialog');}">
     `
 }
 // returned einen <div> Container, in den der Content geladen wird

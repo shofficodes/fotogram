@@ -8,7 +8,7 @@ function renderDialog() {
 // HTML Code für die Dialoge
 function dialogHtml(i) {
     return `
-    <dialog aria-labelledby="dialogTitle" aria-describedby="dialogDescribtion" id="${content_alt[i]}_dialog">
+    <dialog aria-labelledby="dialogTitle" aria-describedby="dialogDescribtion" id="${content_alt[i]}_dialog" onkeyup="if(event.key === 'ArrowLeft') {arrowButton(${i}, 'backward')}; if(event.key === 'ArrowRight') {arrowButton(${i}, 'forward')}">
             <header class="dialog_header">
                 <h2 id="dialogTitle">
                     ${content[i]}
