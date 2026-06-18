@@ -11,7 +11,13 @@ h1 {
     font-size: 56px;
     font-weight: 800;
 
+    text-align: center;
+    margin: 0px 40px;
+
     margin-bottom: -16px;
+}
+.mobileH1{
+    display: none;
 }
 
 article {
@@ -33,7 +39,7 @@ article>section>div>img {
     justify-content: center;
     align-items: center;
 
-    height: 370px;
+    gap: 16px;
 
     overflow-y: scroll;
     overflow-x: visible;
@@ -47,7 +53,8 @@ article>section>div>img {
 
     gap: 16px;
 }
-#content_row0{
+
+#content_row0 {
     padding-top: 16px;
 }
 

@@ -1,0 +1,157 @@
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+    nav > a {
+        padding-left: calc(150px - ((100vw - 1440px) * 150 / 479));
+    }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+    nav > a {
+        padding-left: 32px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+    nav > a {
+        padding-left: 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        align-items: center;
+    }
+
+    article{
+        margin: 56px 0px;
+    }
+
+    .desktopH1 {
+        display: none;
+    }
+
+    .mobileH1 {
+        display: flex;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+    
+    dialog {
+        position: fixed;
+        inset: 0;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 0;
+        width: 100vw;
+        max-width: 100vw;
+        height: 100dvh;
+        max-height: 100dvh;
+        border: none;
+        border-radius: 0;
+        padding: 16px;
+        box-sizing: border-box;
+        background-color: #09212A;
+        overflow: hidden;
+    }
+
+    dialog[open] {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        width: 100vw;
+        height: 100dvh;
+        border-radius: 40px;
+    }
+
+    .dialog_header {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        padding: 0;
+        gap: 12px;
+    }
+
+    .dialog_header > button {
+        align-self: flex-end;
+        margin: 0;
+        width: 40px;
+        height: 40px;
+    }
+
+    .dialog_header > h2 {
+        align-self: flex-start;
+        margin: 0;
+        font-size: clamp(24px, 6vw, 40px);
+        line-height: 1.1;
+        max-width: 100%;
+        word-break: break-word;
+    }
+
+    dialog > section {
+        width: 100%;
+        flex: 1;
+        min-height: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    dialog > section > img {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+    }
+
+    .dialog_footer {
+        width: 100%;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 56px 1fr 56px;
+        align-items: center;
+        gap: 16px;
+        position: static;
+    }
+
+    .rightArrowButton,
+    .leftArrowButton,
+    .dialog_footer > p {
+        position: static;
+        margin: 0;
+    }
+
+    .rightArrowButton,
+    .leftArrowButton {
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dialog_footer > p {
+        text-align: center;
+    }
+
+    .content_area {
+        gap: 8px;
+    }
+    .content_row{
+        gap:8px;
+    }
+    #content_row0{
+        padding-top: 0px;
+    }
+    .dialog_footer{
+        padding: 0px 32px;
+    }
+    .dialog_header{
+        padding: 0px 16px;
+    }
+}

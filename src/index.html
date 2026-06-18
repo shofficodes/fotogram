@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 </head>
 
 <body onload="init(); window.scrollTo(0, 0)">
@@ -26,7 +27,8 @@
 
         <article>
             <header>
-                <h1>Your personal photo album</h1>
+                <h1 class="desktopH1">Your personal photo album</h1>
+                <h1 class="mobileH1">Your personal <br>photo album</h1>
             </header>
 
             <section class="content_area" id="content_area" aria-labelledby="gallery-heading">
@@ -50,6 +52,7 @@
 
     <script src="./js/renderThumbnails.js"></script>
     <script src="./js/renderDialog.js"></script>
+    <script src="./js/breakpoints.js"></script>
 
     <script>
         function init() {
