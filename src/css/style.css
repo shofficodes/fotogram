@@ -10,6 +10,8 @@ h1 {
     font-family: "Figtree-VariableFont_wght", sans-serif;
     font-size: 56px;
     font-weight: 800;
+
+    margin-bottom: -16px;
 }
 
 article {
@@ -31,7 +33,7 @@ article>section>div>img {
     justify-content: center;
     align-items: center;
 
-    height: 350px;
+    height: 370px;
 
     overflow-y: scroll;
     overflow-x: visible;
@@ -44,6 +46,9 @@ article>section>div>img {
     justify-items: center;
 
     gap: 16px;
+}
+#content_row0{
+    padding-top: 16px;
 }
 
 .content_row>img:first-child {

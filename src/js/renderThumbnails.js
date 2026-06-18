@@ -31,9 +31,11 @@ let content_alt = [
     "img_winter_tree"
 ]
 
+// bestimmt die Anzahl an Elementen pro Reihe!
+let maxRowItems = 7;
+
 // rendert den content in den dafür vorgesehenen Bereich
 function renderThumbnails() {
-    let maxRowItems = 7;
     let rowsDone = 0;
     let newRow = false;
     let currentClassName = "";
@@ -94,11 +96,21 @@ function contentHtml(img, alt) {
 }
 // returned einen <div> Container, in den der Content geladen wird
 function containerHtml(className, num) {
+    if(maxRowItems === 7)
+    {
     return `
     <div class="${className}" id="${className + num}"> 
 
     </div>
     `
+    }
+    else{
+        return `
+    <div class="${className} lastRow${maxRowItems}" id="${className + num}"> 
+
+    </div>
+    `
+    }
 }
 // returned den letzten Container mit angepasster Anzahl, damit dieser zentriert bleibt
 function lastContainerHtml(className, num, restNum) {
