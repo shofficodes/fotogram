@@ -156,6 +156,15 @@ dialog>section>img {
     object-fit: cover;
 }
 
+dialog > footer {
+    height: 60px;
+}
+#img_sea_dialog > footer,
+#img_hurricane_dialog > footer,
+#img_lake_dialog > footer {
+    margin-top: 16px;
+}
+
 .dialog_header {
     display: flex;
     flex-direction: row;
