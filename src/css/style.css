@@ -1,3 +1,11 @@
+body {
+    height: 100%;
+}
+
+article {
+    gap: 80px;
+}
+
 h1 {
     font-family: "Figtree-VariableFont_wght", sans-serif;
     font-size: 56px;
@@ -9,9 +17,6 @@ article {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-
-    min-height: 575px;
-    /* später wieder löschen */
 
     margin: 160px 0px;
 }
@@ -32,7 +37,7 @@ article>section>div>img {
     overflow-x: visible;
 }
 
-.content_row{
+.content_row {
     display: grid;
     grid-template: auto/ 180px 150px 150px 150px 150px 150px 180px;
     justify-content: center;
@@ -41,19 +46,20 @@ article>section>div>img {
     gap: 16px;
 }
 
-.content_row > img:first-child{
+.content_row>img:first-child {
     margin-left: 30px;
 }
-.content_row > img:last-child{
+
+.content_row>img:last-child {
     margin-right: 30px;
 }
 
-.content_row> img{
+.content_row>img {
     object-fit: cover;
     border-radius: 16px;
 
     z-index: 1;
-    
+
     box-shadow: 0px 1px 4px rgba(3, 7, 18, 0.02),
         0px 5px 17px rgba(3, 7, 18, 0.04),
         0px 12px 39px rgba(3, 7, 18, 0.07),
@@ -65,7 +71,7 @@ article>section>div>img {
     transform: perspective(0px) rotateY(0deg) translateX(0px);
 }
 
-.content_row > img:hover {
+.content_row>img:hover {
     z-index: 2;
     transform: perspective(50px) rotateY(0deg) translateX(0px) scaleX(1.15) scaleY(1.15);
     border: 2px white solid;
@@ -74,24 +80,29 @@ article>section>div>img {
 .lastRow6 {
     grid-template: auto/ 180px 150px 150px 150px 150px 180px;
 }
+
 .lastRow5 {
     grid-template: auto/ 180px 150px 150px 150px 180px;
 }
+
 .lastRow4 {
     grid-template: auto/ 180px 150px 150px 180px;
 }
+
 .lastRow3 {
     grid-template: auto/ 180px 150px 180px;
 }
+
 .lastRow2 {
     grid-template: auto/ 180px 180px;
 }
+
 .lastRow1 {
     grid-template: auto/ 210px;
 }
 
 
-dialog{
+dialog {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -104,16 +115,19 @@ dialog{
 
     display: none;
 }
-dialog > header > h2{
+
+dialog>header>h2 {
     color: white;
     font-family: "Figtree-VariableFont_wght", sans-serif;
     font-weight: 700;
     font-size: 24px;
 
-    margin-top: 16px;;
+    margin-top: 16px;
+    ;
 }
+
 dialog[open] {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -121,14 +135,16 @@ dialog[open] {
     width: 640px;
     height: 640px;
 }
-dialog > section > img {
+
+dialog>section>img {
     width: 560px;
     height: auto;
     max-height: 450px;
 
     object-fit: cover;
 }
-.dialog_header{
+
+.dialog_header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -137,14 +153,56 @@ dialog > section > img {
     width: 100%;
     padding: 0px 24px;
 }
-.dialog_header > button {
-    object-fit: contain;
+
+.dialog_header>button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background: transparent;
-    border: none; 
-    outline: none; 
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    width: 32px;
+    height: 32px;
+    margin-top: 16px;
+    padding: 0;
 }
-.dialog_footer{
-    display: flex; 
+
+.dialog_header>button>img {
+    inset: 0;
+    object-fit: contain;
+}
+
+.close_hover,
+.close_click {
+    display: none;
+}
+
+.dialog_header>button:hover .close_default {
+    display: none;
+}
+
+.dialog_header>button:hover .close_hover {
+    display: block;
+}
+
+.dialog_header>button:active .close_default,
+.dialog_header>button:active .close_hover {
+    display: none;
+}
+
+.dialog_header>button:active .close_click {
+    display: block;
+}
+
+
+
+
+.dialog_footer {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -153,22 +211,76 @@ dialog > section > img {
 
     width: 50%;
 }
-.dialog_footer > button {
+
+.dialog_footer>button {
     object-fit: contain;
     background: transparent;
 }
-.leftImg{
+
+.rightArrowButton {
+    position: absolute;
+    right: 20%;
+    bottom: 5%;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightImg,
+.rightImgHover {
+    width: 60px;
+    height: 60px;
+}
+
+.rightImgHover {
+    display: none;
+}
+
+.rightArrowButton:hover .rightImg {
+    display: none;
+}
+
+.rightArrowButton:hover .rightImgHover {
+    display: flex;
+}
+
+.leftArrowButton {
     transform: scaleX(-1);
     position: absolute;
     left: 20%;
     bottom: 5%;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.rightImg{
-    position: absolute;
-    right: 20%;
-    bottom: 5%;
+
+.leftImg,
+.leftImgHover {
+    width: 60px;
+    height: 60px;
 }
-.dialog_footer > p{
+
+.leftImgHover {
+    display: none;
+}
+
+.leftArrowButton:hover .leftImg {
+    display: none;
+}
+
+.leftArrowButton:hover .leftImgHover {
+    display: flex;
+}
+
+.dialog_footer>p {
     position: absolute;
     right: 49%;
     left: 47%;

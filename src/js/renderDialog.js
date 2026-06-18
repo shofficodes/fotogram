@@ -14,7 +14,9 @@ function dialogHtml(i) {
                     ${content[i]}
                 </h2>
                 <button onclick="closeDialog()">
-                    <img src="../assets/img/navigation/close_default.svg">
+                    <img class="close_default" src="../assets/img/navigation/close_default.svg" alt="close_button">
+                    <img class="close_hover" src="../assets/img/navigation/close_hover.svg" alt="close_button_with_hover_effect">
+                    <img class="close_click" src="../assets/img/navigation/close_while_pressing.svg" alt="close_button_with_click_effect">
                 </button>
             </header>
 
@@ -23,14 +25,15 @@ function dialogHtml(i) {
             </section>
 
             <footer class="dialog_footer">
-                <button class="leftImg" id="leftImg" aria-label="Close button" onclick="arrowButton(${i}, 'backward')">
-                    <img src="../assets/img/navigation/arrow_default.svg">
+                <button class="leftArrowButton" id="leftArrowButton" aria-label="Close button" onclick="arrowButton(${i}, 'backward')">
+                    <img class="leftImg" src="../assets/img/navigation/arrow_default.svg" alt="leftArrowButton">
+                    <img class="leftImgHover" src="../assets/img/navigation/arrow_hover.svg" alt="leftArrowButton">
                 </button>
 
                 <p>${i + 1}/${content.length}</p>
-                
-                <button class="rightImg" id="rightImg" aria-label="Close button" onclick="arrowButton(${i}, 'forward')">
-                    <img src="../assets/img/navigation/arrow_default.svg">
+                <button class="rightArrowButton" id="rightArrowButton" aria-label="Close button" onclick="arrowButton(${i}, 'forward')">
+                    <img class="rightImg" src="../assets/img/navigation/arrow_default.svg" alt="rightArrowButton">
+                    <img class="rightImgHover" src="../assets/img/navigation/arrow_hover.svg" alt="rightArrowButton">
                 </button>
             </footer>
         </dialog>
