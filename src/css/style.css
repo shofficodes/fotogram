@@ -100,6 +100,8 @@ dialog{
     background-color: #09212A;
     border-radius: 40px;
 
+    gap: 16px;
+
     display: none;
 }
 dialog > header > h2{
@@ -108,12 +110,12 @@ dialog > header > h2{
     font-weight: 700;
     font-size: 24px;
 
-    margin: 16px 0px;
+    margin-top: 16px;;
 }
 dialog[open] {
     display: flex; 
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
     width: 640px;
@@ -121,7 +123,10 @@ dialog[open] {
 }
 dialog > section > img {
     width: 560px;
-    height: 375px;
+    height: auto;
+    max-height: 450px;
+
+    object-fit: cover;
 }
 .dialog_header{
     display: flex;
@@ -135,6 +140,8 @@ dialog > section > img {
 .dialog_header > button {
     object-fit: contain;
     background: transparent;
+    border: none; 
+    outline: none; 
 }
 .dialog_footer{
     display: flex; 
@@ -152,4 +159,18 @@ dialog > section > img {
 }
 .leftImg{
     transform: scaleX(-1);
+    position: absolute;
+    left: 20%;
+    bottom: 5%;
+}
+.rightImg{
+    position: absolute;
+    right: 20%;
+    bottom: 5%;
+}
+.dialog_footer > p{
+    position: absolute;
+    right: 49%;
+    left: 47%;
+    bottom: 9%;
 }
