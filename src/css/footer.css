@@ -6,6 +6,7 @@ footer {
 
     background-color: #09212A;
     height: 128px;
+    min-height: 128px;
 
     border-top-left-radius: 20%;
     border-top-right-radius: 20%;

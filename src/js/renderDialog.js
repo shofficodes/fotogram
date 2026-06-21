@@ -1,11 +1,11 @@
-// rendert die dialog_area
+// render dialog_area
 function renderDialog() {
     for (let i = 0; i < content.length; i++) {
         document.getElementById("dialog_area").innerHTML += dialogHtml(i);
     }
 }
 
-// HTML Code für die Dialoge
+// HTML code for dialogs
 function dialogHtml(i) {
     return `
     <dialog aria-labelledby="dialogTitle" aria-describedby="dialogDescribtion" id="${content_alt[i]}_dialog" onkeyup="if(event.key === 'ArrowLeft') {arrowButton(${i}, 'backward')}; if(event.key === 'ArrowRight') {arrowButton(${i}, 'forward')}">
@@ -40,39 +40,37 @@ function dialogHtml(i) {
 `
 }
 
-// öffnet den Dialog
 function openDialog(dialog_tag) {
     dialog_ref = document.getElementById(dialog_tag);
     dialog_ref.showModal();
 }
-// schließt den Dialog
 function closeDialog() {
     dialog_ref.close();
 }
 
-// Logik für die Pfeiltasten im Dialog
+// logic for arrow-keys in dialog
 function arrowButton(i, direction) {
-    // rechte Pfeiltaste Logik
+    // right arrow key
     if (direction == "forward") {
-        // vom letzten item zum ersten springen
+        // jump from first to last item
         if (i == (content.length - 1)) {
             closeDialog();
             openDialog(content_alt[0] + "_dialog");
         }
-        // nächstes item aufrufen
+        // load next item
         else {
             closeDialog();
             openDialog(content_alt[i + 1] + "_dialog");
         }
     }
-    // linke Pfeiltaste Logik
+    // left arrow key
     else if (direction == "backward") {
-        // vom ersten item zum letzten springen
+        // jump from first to last item
         if (i == 0) {
             closeDialog();
             openDialog(content_alt[content.length - 1] + "_dialog");
         }
-        // vorheriges item aufrufen
+        // call previous item
         else {
             closeDialog();
             openDialog(content_alt[i - 1] + "_dialog");
@@ -80,7 +78,7 @@ function arrowButton(i, direction) {
     }
 }
 
-// Logik für den schließenden Dialog sobald man außerhalb der Box Clickt
+// close dialog by clicking outside the box
 function enableDialogOutsideClickClose(i) {
     const dialogs = document.querySelectorAll("dialog");
 

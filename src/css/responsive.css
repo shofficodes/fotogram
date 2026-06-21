@@ -155,3 +155,16 @@
         padding: 0px 16px;
     }
 }
+
+@media screen and (min-width: 300px) and (max-width: 380px) {
+    .content_row > img {
+        width: 140px;
+        height: 140px;
+    }
+    .content_row > img:first-child{
+        margin-left: 35px;
+    }
+    .content_row > img:nth-child(2){
+        margin-right: 35px;
+    }
+}

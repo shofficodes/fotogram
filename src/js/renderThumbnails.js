@@ -1,5 +1,5 @@
 
-// Array mit Dateinamen der img´s
+// Array with img names
 let content = [
     "alaska-810433_1280.jpg",
     "hurricane-92968_1280.jpg",
@@ -15,7 +15,7 @@ let content = [
     "winter-1675197_1280.jpg"
 ]
 
-// Array mit alternativ Texten
+// Array with img alternative names 
 let content_alt = [
     "img_of_alaska",
     "img_hurricane",
@@ -31,10 +31,10 @@ let content_alt = [
     "img_winter_tree"
 ]
 
-// bestimmt die Anzahl an Elementen pro Reihe!
+// amount of items pro row
 let maxRowItems = 7;
 
-// rendert den content in den dafür vorgesehenen Bereich
+// render content 
 function renderThumbnails() {
     let rowsDone = 0;
     let newRow = false;
@@ -45,15 +45,15 @@ function renderThumbnails() {
 
     document.getElementById("content_area").innerHTML = ""; // clear content_area
 
-    // ermittle, wie viele Reihen benötigt werden und wie viele items in der letzten Reihe liegen
+    // get rest amount of items in last row 
     if (content.length > maxRowItems) {
         rows = Math.floor(content.length / maxRowItems); // wie oft 7 reinpasst
         rest = content.length % maxRowItems;
     }
 
-    // erstellt einzelnd die Reihen in denen der content dargestellt wird! 
+    // create single row with contents
     for (let i = 0; i < content.length; i++) {
-        if (newRow || i == 0) // neue Reihe, Container erzeugen
+        if (newRow || i == 0) // new row, create container
         {
             currentClassName = "content_row";
             // letzter Reihe zusätzliche Klasse zuweisen
@@ -69,18 +69,18 @@ function renderThumbnails() {
             newRow = false;
         }
 
-        if (rowsDone == rows) // letzte Reihe rendern
+        if (rowsDone == rows) // render last row
         {
             // dann auf .lastRow css zugreifen!
             currentClassName = "content_row lastRow" + (7 - rest);
             document.getElementById(currentId).innerHTML += contentHtml(content[i], content_alt[i]);
         }
-        else if (rowsDone < rows) // die ersten Reihen rendern
+        else if (rowsDone < rows) // render first rows
         {
             document.getElementById(currentId).innerHTML += contentHtml(content[i], content_alt[i]);
         }
 
-        if ((i + 1) % maxRowItems === 0) // letztes item dieser Reihe erfassen
+        if ((i + 1) % maxRowItems === 0) // get last item of row
         {
             rowsDone++;
             newRow = true;
@@ -88,13 +88,13 @@ function renderThumbnails() {
     }
 }
 
-// returned den contentHTML-Code
+// return contentHTML-code
 function contentHtml(img, alt) {
     return ` 
     <img src="../assets/img/content/${img}" alt="${alt}" id="${alt}" onclick="openDialog('${alt}_dialog')" tabindex="0" onkeyup="if(event.key === 'Enter') {openDialog('${alt}_dialog');}">
     `
 }
-// returned einen <div> Container, in den der Content geladen wird
+// returned a new <div> Container for upcoming content
 function containerHtml(className, num) {
     if(maxRowItems === 7)
     {
@@ -112,7 +112,7 @@ function containerHtml(className, num) {
     `
     }
 }
-// returned den letzten Container mit angepasster Anzahl, damit dieser zentriert bleibt
+// returned last container with different lenght for centering content
 function lastContainerHtml(className, num, restNum) {
     return `
     <div class="${className} lastRow${restNum}" id="${className + num}"> 

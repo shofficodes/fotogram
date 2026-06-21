@@ -1,7 +1,3 @@
-body {
-    height: 100%;
-}
-
 article {
     gap: 80px;
 }
@@ -41,13 +37,13 @@ article>section>div>img {
 
     gap: 16px;
 
-    overflow-y: scroll;
+    overflow-y: visible;
     overflow-x: visible;
 }
 
 .content_row {
     display: grid;
-    grid-template: auto/ 180px 150px 150px 150px 150px 150px 180px;
+    grid-template: 150px/ 180px 150px 150px 150px 150px 150px 180px;
     justify-content: center;
     justify-items: center;
 
@@ -90,27 +86,27 @@ article>section>div>img {
 }
 
 .lastRow6 {
-    grid-template: auto/ 180px 150px 150px 150px 150px 180px;
+    grid-template: 150px/ 180px 150px 150px 150px 150px 180px;
 }
 
 .lastRow5 {
-    grid-template: auto/ 180px 150px 150px 150px 180px;
+    grid-template: 150px/ 180px 150px 150px 150px 180px;
 }
 
 .lastRow4 {
-    grid-template: auto/ 180px 150px 150px 180px;
+    grid-template: 150px/ 180px 150px 150px 180px;
 }
 
 .lastRow3 {
-    grid-template: auto/ 180px 150px 180px;
+    grid-template: 150px/ 180px 150px 180px;
 }
 
 .lastRow2 {
-    grid-template: auto/ 180px 180px;
+    grid-template: 150px/ 180px 180px;
 }
 
 .lastRow1 {
-    grid-template: auto/ 210px;
+    grid-template: 150px/ 210px;
 }
 
 
