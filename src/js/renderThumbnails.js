@@ -34,14 +34,13 @@ let content_alt = [
 // amount of items pro row
 let maxRowItems = 7;
 
+
+let rows = 0;
+let rest = 0;
+
+
 // render content 
 function renderThumbnails() {
-    let rowsDone = 0;
-    let newRow = false;
-    let currentClassName = "";
-    let rows = 0;
-    let rest = 0;
-    let currentId = "";
 
     document.getElementById("content_area").innerHTML = ""; // clear content_area
 
@@ -51,23 +50,40 @@ function renderThumbnails() {
         rest = content.length % maxRowItems;
     }
 
-    // create single row with contents
-    for (let i = 0; i < content.length; i++) {
-        if (newRow || i == 0) // new row, create container
-        {
-            currentClassName = "content_row";
-            // letzter Reihe zusätzliche Klasse zuweisen
-            if (rowsDone == rows) {
-                document.getElementById("content_area").innerHTML += lastContainerHtml(currentClassName, rowsDone, rest)
-                currentId = currentClassName + rowsDone;
-            }
-            // neue Reihe erstellen
-            else {
-                document.getElementById("content_area").innerHTML += containerHtml(currentClassName, rowsDone)
-                currentId = currentClassName + rowsDone;
-            }
-            newRow = false;
+    // create single row with content
+    createRow();
+
+}
+
+// --- createRow - Helper --- 
+function createNewRowContainer(i, rowsDone, newRow, currentClassName, currentId, rows, rest) {
+    if (newRow || i == 0) {
+        currentClassName = "content_row";
+
+        if (rowsDone == rows) {
+            document.getElementById("content_area").innerHTML += lastContainerHtml(currentClassName, rowsDone, rest);
+            currentId = currentClassName + rowsDone;
+        } else {
+            document.getElementById("content_area").innerHTML += containerHtml(currentClassName, rowsDone);
+            currentId = currentClassName + rowsDone;
         }
+
+        newRow = false;
+    }
+
+    return { currentClassName, currentId, newRow };
+}
+
+// create single row with content
+function createRow() {
+    let rowsDone = 0;
+    let newRow = false;
+    let currentClassName = "";
+    let currentId = "";
+
+    for (let i = 0; i < content.length; i++) {
+        ({ currentClassName, currentId, newRow } = createNewRowContainer(i, rowsDone, newRow, currentClassName, currentId, rows, rest));
+
 
         if (rowsDone == rows) // render last row
         {
@@ -94,17 +110,17 @@ function contentHtml(img, alt) {
     <img src="../assets/img/content/${img}" alt="${alt}" id="${alt}" onclick="openDialog('${alt}_dialog')" tabindex="0" onkeyup="if(event.key === 'Enter') {openDialog('${alt}_dialog');}">
     `
 }
+
 // returned a new <div> Container for upcoming content
 function containerHtml(className, num) {
-    if(maxRowItems === 7)
-    {
-    return `
+    if (maxRowItems === 7) {
+        return `
     <div class="${className}" id="${className + num}"> 
 
     </div>
     `
     }
-    else{
+    else {
         return `
     <div class="${className} lastRow${maxRowItems}" id="${className + num}"> 
 
@@ -112,6 +128,7 @@ function containerHtml(className, num) {
     `
     }
 }
+
 // returned last container with different lenght for centering content
 function lastContainerHtml(className, num, restNum) {
     return `

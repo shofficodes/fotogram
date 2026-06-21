@@ -44,6 +44,7 @@ function openDialog(dialog_tag) {
     dialog_ref = document.getElementById(dialog_tag);
     dialog_ref.showModal();
 }
+
 function closeDialog() {
     dialog_ref.close();
 }
@@ -52,7 +53,7 @@ function closeDialog() {
 function arrowButton(i, direction) {
     // right arrow key
     if (direction == "forward") {
-        // jump from first to last item
+        // jump from last to first item
         if (i == (content.length - 1)) {
             closeDialog();
             openDialog(content_alt[0] + "_dialog");
