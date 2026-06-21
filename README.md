@@ -1,6 +1,7 @@
 # Fotogram
 
 This is a place to safe and enjoy you photos. 
+The photos you put into are rekursiv rendered for unlimited content lenght. 
 
 ## Architecture 
 
