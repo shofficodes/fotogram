@@ -89,11 +89,11 @@ function createRow() {
         {
             // dann auf .lastRow css zugreifen!
             currentClassName = "content_row lastRow" + (7 - rest);
-            document.getElementById(currentId).innerHTML += contentHtml(content[i], content_alt[i]);
+            document.getElementById(currentId).innerHTML += contentHtml(content[i], contentAlt[i]);
         }
         else if (rowsDone < rows) // render first rows
         {
-            document.getElementById(currentId).innerHTML += contentHtml(content[i], content_alt[i]);
+            document.getElementById(currentId).innerHTML += contentHtml(content[i], contentAlt[i]);
         }
 
         if ((i + 1) % maxRowItems === 0) // get last item of row

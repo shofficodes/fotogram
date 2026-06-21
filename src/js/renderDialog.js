@@ -8,7 +8,7 @@ function renderDialog() {
 // HTML code for dialogs
 function dialogHtml(i) {
     return `
-    <dialog aria-labelledby="dialogTitle" aria-describedby="dialogDescribtion" id="${content_alt[i]}_dialog" onkeyup="if(event.key === 'ArrowLeft') {arrowButton(${i}, 'backward')}; if(event.key === 'ArrowRight') {arrowButton(${i}, 'forward')}">
+    <dialog aria-labelledby="dialogTitle" aria-describedby="dialogDescribtion" id="${contentAlt[i]}_dialog" onkeyup="if(event.key === 'ArrowLeft') {arrowButton(${i}, 'backward')}; if(event.key === 'ArrowRight') {arrowButton(${i}, 'forward')}">
             <header class="dialog_header">
                 <h2 id="dialogTitle">
                     ${content[i]}
@@ -21,7 +21,7 @@ function dialogHtml(i) {
             </header>
 
             <section>
-                <img src="../assets/img/content/${content[i]}" alt="${content_alt[i]}" id="${content_alt}">
+                <img src="../assets/img/content/${content[i]}" alt="${contentAlt[i]}" id="${contentAlt}">
             </section>
 
             <footer class="dialog_footer">
@@ -56,12 +56,12 @@ function arrowButton(i, direction) {
         // jump from last to first item
         if (i == (content.length - 1)) {
             closeDialog();
-            openDialog(content_alt[0] + "_dialog");
+            openDialog(contentAlt[0] + "_dialog");
         }
         // load next item
         else {
             closeDialog();
-            openDialog(content_alt[i + 1] + "_dialog");
+            openDialog(contentAlt[i + 1] + "_dialog");
         }
     }
     // left arrow key
@@ -69,12 +69,12 @@ function arrowButton(i, direction) {
         // jump from first to last item
         if (i == 0) {
             closeDialog();
-            openDialog(content_alt[content.length - 1] + "_dialog");
+            openDialog(contentAlt[content.length - 1] + "_dialog");
         }
         // call previous item
         else {
             closeDialog();
-            openDialog(content_alt[i - 1] + "_dialog");
+            openDialog(contentAlt[i - 1] + "_dialog");
         }
     }
 }
