@@ -16,7 +16,7 @@ let content = [
 ]
 
 // Array with img alternative names 
-let content_alt = [
+let contentAlt = [
     "img_of_alaska",
     "img_hurricane",
     "img_snow_bunting",
