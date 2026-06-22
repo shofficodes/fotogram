@@ -12,6 +12,7 @@ h1 {
 
     margin-bottom: -16px;
 }
+
 .mobileH1{
     display: none;
 }
@@ -31,42 +32,24 @@ article>section>div>img {
 }
 
 .content_area {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 
     gap: 16px;
+    padding: 0px 32px;
 
     overflow-y: visible;
     overflow-x: visible;
 }
 
-.content_row {
-    display: grid;
-    grid-template: 150px/ 180px 150px 150px 150px 150px 150px 180px;
-    justify-content: center;
-    justify-items: center;
-
-    gap: 16px;
-}
-
-#content_row0 {
-    padding-top: 16px;
-}
-
-.content_row>img:first-child {
-    margin-left: 30px;
-}
-
-.content_row>img:last-child {
-    margin-right: 30px;
-}
-
-.content_row>img {
-    object-fit: cover;
+.content_area > img {
+    width: 150px; 
+    height: 150px;
     border-radius: 16px;
-
-    z-index: 1;
+    object-fit: cover;
 
     box-shadow: 0px 1px 4px rgba(3, 7, 18, 0.02),
         0px 5px 17px rgba(3, 7, 18, 0.04),
@@ -79,35 +62,12 @@ article>section>div>img {
     transform: perspective(0px) rotateY(0deg) translateX(0px);
 }
 
-.content_row>img:hover {
+.content_area>img:hover {
     z-index: 2;
     transform: perspective(50px) rotateY(0deg) translateX(0px) scaleX(1.15) scaleY(1.15);
     border: 2px white solid;
 }
 
-.lastRow6 {
-    grid-template: 150px/ 180px 150px 150px 150px 150px 180px;
-}
-
-.lastRow5 {
-    grid-template: 150px/ 180px 150px 150px 150px 180px;
-}
-
-.lastRow4 {
-    grid-template: 150px/ 180px 150px 150px 180px;
-}
-
-.lastRow3 {
-    grid-template: 150px/ 180px 150px 180px;
-}
-
-.lastRow2 {
-    grid-template: 150px/ 180px 180px;
-}
-
-.lastRow1 {
-    grid-template: 150px/ 210px;
-}
 
 
 dialog {

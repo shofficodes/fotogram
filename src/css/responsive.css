@@ -141,12 +141,7 @@
 
     .content_area {
         gap: 8px;
-    }
-    .content_row{
-        gap:8px;
-    }
-    #content_row0{
-        padding-top: 0px;
+        padding: 0px 16px;
     }
     .dialog_footer{
         padding: 0px 32px;
@@ -157,14 +152,11 @@
 }
 
 @media screen and (min-width: 300px) and (max-width: 380px) {
-    .content_row > img {
+    .content_area > img {
         width: 140px;
         height: 140px;
     }
-    .content_row > img:first-child{
-        margin-left: 35px;
-    }
-    .content_row > img:nth-child(2){
-        margin-right: 35px;
+    .content_area{
+        padding: 0px 8px;
     }
 }
