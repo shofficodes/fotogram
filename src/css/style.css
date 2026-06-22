@@ -35,9 +35,6 @@ article {
 
     gap: 16px;
     padding: 0px 32px;
-
-    overflow-y: visible;
-    overflow-x: visible;
 }
 .content_area > button{
     background-color: #06171E;
@@ -104,19 +101,14 @@ dialog[open] {
 
 dialog>section>img {
     width: 560px;
-    height: auto;
-    max-height: 450px;
+    height: 375px;
+    max-height: 375px;
 
     object-fit: cover;
 }
 
 dialog > footer {
     height: 60px;
-}
-#img_sea_dialog > footer,
-#img_hurricane_dialog > footer,
-#img_lake_dialog > footer {
-    margin-top: 16px;
 }
 
 .dialog_header {
@@ -172,9 +164,6 @@ dialog > footer {
 .dialog_header>button:active .close_click {
     display: block;
 }
-
-
-
 
 .dialog_footer {
     display: flex;
@@ -264,4 +253,8 @@ dialog > footer {
 
 .dialog_footer > button{
     border: none;
+}
+
+dialog:focus {
+    outline: none;
 }

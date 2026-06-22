@@ -1,4 +1,3 @@
-
 // Array with img names
 let content = [
     "alaska-810433_1280.jpg",
@@ -31,24 +30,19 @@ let contentAlt = [
     "img_winter_tree"
 ]
 
-// amount of items pro row
-let maxRowItems = 7;
-
-
-let rows = 0;
-let rest = 0;
-
-
-// render content 
 function renderThumbnails() {
-    document.getElementById("content_area").innerHTML = ""; // clear content_area
+    document.getElementById("content_area").innerHTML = "";
     createRow();
 }
 
-// create single row with content
 function createRow() {
     for (let i = 0; i < content.length; i++) {
         document.getElementById("content_area").innerHTML += contentHtml(content[i], contentAlt[i]);
     }
 }
 
+function openWithEnter(event) {
+    if (event.key === 'Enter') {
+        openDialog('content_dialog')
+    }
+}

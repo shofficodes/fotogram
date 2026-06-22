@@ -1,12 +1,19 @@
-// render dialog_area
-function renderDialog() {
+let currentIndex = 0;
+
+function renderDialog(alt) {
     for (let i = 0; i < content.length; i++) {
-        document.getElementById("dialog_area").innerHTML += dialogHtml(i);
+        if (String(contentAlt[i]).trim() === alt.alt || String(contentAlt[i]).trim() === alt) {
+            document.getElementById("content_dialog").innerHTML = dialogHtml(i);
+            currentIndex = i;
+            document.getElementById("content_dialog").focus();
+            break;
+        }
     }
 }
 
-function openDialog(dialog_tag) {
-    dialog_ref = document.getElementById(dialog_tag);
+function openDialog(alt) {
+    renderDialog(alt);
+    dialog_ref = document.getElementById("content_dialog");
     dialog_ref.showModal();
 }
 
@@ -14,37 +21,25 @@ function closeDialog() {
     dialog_ref.close();
 }
 
-// logic for arrow-keys in dialog
-function arrowButton(i, direction) {
-    // right arrow key
+function arrowButton(direction) {
     if (direction == "forward") {
-        // jump from last to first item
-        if (i == (content.length - 1)) {
-            closeDialog();
-            openDialog(contentAlt[0] + "_dialog");
+        if (currentIndex == (content.length - 1)) {
+            renderDialog(contentAlt[0]);
         }
-        // load next item
         else {
-            closeDialog();
-            openDialog(contentAlt[i + 1] + "_dialog");
+            renderDialog(contentAlt[currentIndex + 1]);
         }
     }
-    // left arrow key
     else if (direction == "backward") {
-        // jump from first to last item
-        if (i == 0) {
-            closeDialog();
-            openDialog(contentAlt[content.length - 1] + "_dialog");
+        if (currentIndex == 0) {
+            renderDialog(contentAlt[content.length - 1]);
         }
-        // call previous item
         else {
-            closeDialog();
-            openDialog(contentAlt[i - 1] + "_dialog");
+            renderDialog(contentAlt[currentIndex - 1]);
         }
     }
 }
 
-// close dialog by clicking outside the box
 function enableDialogOutsideClickClose(i) {
     const dialogs = document.querySelectorAll("dialog");
 
@@ -64,3 +59,19 @@ function enableDialogOutsideClickClose(i) {
         });
     });
 }
+
+function trackArrowKeys(event) {
+    if (event.key === 'ArrowLeft') {
+        arrowButton('backward')
+    }
+    else if (event.key === 'ArrowRight') {
+        arrowButton('forward')
+    }
+}
+
+document.addEventListener("keyup", (event) => {
+    const dialog = document.getElementById("content_dialog");
+    if (dialog.open) {
+        trackArrowKeys(event.code);
+    }
+});
