@@ -1,7 +1,7 @@
 // return contentHTML-code
 function contentHtml(img, alt) {
     return ` 
-    <button type="button" onkeyup="if(event.key === 'Enter') {openDialog('${alt}_dialog');}">
+    <button type="button" onclick="openDialog('${alt}_dialog')" onkeyup="if(event.key === 'Enter') {openDialog('${alt}_dialog');}">
         <img src="../assets/img/content/${img}" alt="${alt}" id="${alt}" >
     </button> 
     `

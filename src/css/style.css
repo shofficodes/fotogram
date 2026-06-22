@@ -41,6 +41,7 @@ article {
 }
 .content_area > button{
     background-color: #06171E;
+    border: none;
 }
 .content_area > button > img {
     width: 150px; 
@@ -259,4 +260,8 @@ dialog > footer {
     right: 49%;
     left: 47%;
     bottom: 9%;
+}
+
+.dialog_footer > button{
+    border: none;
 }
