@@ -26,11 +26,6 @@ article {
     margin: 160px 0px;
 }
 
-article>section>div>img {
-    width: 150px;
-    height: 150px;
-}
-
 .content_area {
     display: flex;
     flex-wrap: wrap;
@@ -44,8 +39,10 @@ article>section>div>img {
     overflow-y: visible;
     overflow-x: visible;
 }
-
-.content_area > img {
+.content_area > button{
+    background-color: #06171E;
+}
+.content_area > button > img {
     width: 150px; 
     height: 150px;
     border-radius: 16px;
@@ -62,7 +59,7 @@ article>section>div>img {
     transform: perspective(0px) rotateY(0deg) translateX(0px);
 }
 
-.content_area>img:hover {
+.content_area > button > img:hover {
     z-index: 2;
     transform: perspective(50px) rotateY(0deg) translateX(0px) scaleX(1.15) scaleY(1.15);
     border: 2px white solid;
