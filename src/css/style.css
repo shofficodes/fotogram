@@ -179,6 +179,7 @@ dialog > footer {
 .dialog_footer>button {
     object-fit: contain;
     background: transparent;
+    cursor: pointer;
 }
 
 .rightArrowButton {

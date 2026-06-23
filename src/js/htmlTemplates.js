@@ -1,6 +1,6 @@
 function contentHtml(img, alt) {
     return ` 
-    <button type="button" onclick="openDialog(${alt})" onkeyup="openWithEnter()"}">
+    <button type="button" onclick="openDialog(${alt})" onkeyup="openWithEnter(event)"}">
         <img src="../assets/img/content/${img}" alt="${alt}" id="${alt}" >
     </button> 
     `
